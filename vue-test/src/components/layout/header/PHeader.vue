@@ -14,11 +14,6 @@ import { RouterLink } from 'vue-router';
 .wrapper {
   width: 100%;
   height: 40px;
-  display: flex;
-  flex-direction: row;
-  position: absolute;
-  top: 0;
-  left: 0;
   background-color: #eeeeee;
 }
 

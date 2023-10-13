@@ -14,11 +14,11 @@ import PFooter from '../layout/footer/PFooter.vue';
 <style lang="scss" module>
 .app {
   display: flex;
-  height: 100%;
   flex-direction: column;
-  position: relative;
-  min-width: 1340px;
-  letter-spacing: -0.5px;
-  transition: all 0.3s ease-in-out;
+  height: 100vh;
+  //   position: relative;
+  //   min-width: 1340px;
+  //   letter-spacing: -0.5px;
+  //   transition: all 0.3s ease-in-out;
 }
 </style>
