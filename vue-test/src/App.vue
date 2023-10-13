@@ -1,11 +1,7 @@
 <script setup>
-import { RouterView } from 'vue-router';
-import PHeader from './components/PHeader.vue';
+import PApp from './components/layout/PApp.vue';
 </script>
 
 <template>
-  <div>
-    <PHeader></PHeader>
-    <RouterView />
-  </div>
+  <PApp />
 </template>

@@ -1,9 +1,14 @@
 <script setup>
-import TheWelcome from '../components/TheWelcome.vue'
+import TheWelcome from '../components/TheWelcome.vue';
 </script>
 
 <template>
-  <main>
+  <div class="about">
     <TheWelcome />
-  </main>
+  </div>
 </template>
+
+<style>
+.about {
+}
+</style>
