@@ -1,0 +1,29 @@
+:root {
+  --bs-body-color: var(--bs-gray-900);
+  --bs-body-font-family: 'Spoqa Han Sans Neo';
+}
+
+html,
+body {
+  margin: 0 auto;
+  height: 100%;
+}
+
+body {
+  overflow: hidden;
+  display: flex;
+  place-items: center;
+}
+
+#app {
+  height: 100%;
+  width: 100%;
+
+  margin: 0;
+  padding: 0;
+
+  overflow: auto;
+  font-weight: normal;
+
+  background-color: #fffbfb;
+}
