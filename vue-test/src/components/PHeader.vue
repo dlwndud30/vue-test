@@ -5,7 +5,7 @@ import HelloWorld from './HelloWorld.vue';
 <template>
   <header>
     <div class="wrapper">
-      <HelloWorld msg="You did it!!" />
+      <HelloWorld msg="hello" />
 
       <nav>
         <RouterLink to="/">Home</RouterLink>
