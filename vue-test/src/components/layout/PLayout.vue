@@ -16,9 +16,5 @@ import PFooter from '../layout/footer/PFooter.vue';
   display: flex;
   flex-direction: column;
   height: 100vh;
-  //   position: relative;
-  //   min-width: 1340px;
-  //   letter-spacing: -0.5px;
-  //   transition: all 0.3s ease-in-out;
 }
 </style>
