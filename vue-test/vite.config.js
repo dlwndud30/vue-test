@@ -5,13 +5,21 @@ import vue from '@vitejs/plugin-vue';
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  server: {
-    port: 9999, // 사용할 포트 번호 설정
-  },
   plugins: [vue()],
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url)),
+    },
+  },
+  build: {
+    outDir: '../../spring-test/test/src/main/resources/static',
+  },
+  server: {
+    proxy: {
+      '/api': {
+        target: 'http://localhost:8080',
+        rewrite: (path) => path.replace(/^\/api/, ''),
+      },
     },
   },
 });
