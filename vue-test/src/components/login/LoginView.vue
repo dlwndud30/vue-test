@@ -1,6 +1,10 @@
 <script setup>
 import { ref, watch, onMounted } from 'vue';
 import LoginForm from './LoginForm.vue';
+
+import { useApi } from '../../composables/useAxios';
+const api = useApi();
+
 import { useFetch } from '../../composables/fetch.js';
 const url = ref('/api/login');
 const { data, error } = useFetch(url);
@@ -10,9 +14,8 @@ watch(user.value, () => {
   console.log(user.value);
 });
 
-import axios from 'axios';
 const load = async () => {
-  const result = await axios.get('/api/login');
+  const result = await api.get('/api/login');
   user.value = result.data;
 };
 

@@ -37,7 +37,6 @@ const getColor = () => {
 };
 
 const vColor = (el, binding) => {
-  console.log(binding);
   el.style.color = binding.value;
 };
 
