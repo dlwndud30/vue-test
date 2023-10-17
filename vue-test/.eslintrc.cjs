@@ -7,4 +7,8 @@ module.exports = {
   parserOptions: {
     ecmaVersion: 'latest',
   },
+  rules: {
+    // no-unused-vars 규칙을 비활성화합니다.
+    'no-unused-vars': 'off',
+  },
 };
