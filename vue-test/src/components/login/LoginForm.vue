@@ -1,6 +1,10 @@
 <script setup>
 import { ref, watch, onMounted } from 'vue';
 
+import { useFetch } from '../../composables/fetch.js';
+const url = ref('/api/login');
+const { data, error } = useFetch(url);
+
 import axios from 'axios';
 
 const user = ref({ email: '', password: '' });
@@ -38,4 +42,7 @@ onMounted(() => {
       />
     </div>
   </form>
+
+  <div>{{ data }}</div>
+  <div>{{ error }}</div>
 </template>

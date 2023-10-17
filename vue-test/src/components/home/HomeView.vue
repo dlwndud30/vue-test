@@ -1,29 +1,18 @@
 <script setup>
-import { ref, onMounted } from 'vue';
-import axios from 'axios';
+import { watch } from 'vue';
+import { useMouse } from '../../composables/mouse';
+const { x, y } = useMouse();
 
-const data = ref([]);
-
-const fetchData = async () => {
-  const result = await axios.get('https://jsonplaceholder.typicode.com/users/');
-  data.value = result.data;
-};
-
-onMounted(() => {
-  fetchData();
-});
+watch(
+  () => x.value,
+  () => {
+    console.log(x.value);
+  }
+);
 </script>
 
 <template>
-  <div>
-    home
-    <div
-      v-for="(item, index) in data"
-      :key="index"
-    >
-      {{ item.name }}
-    </div>
-  </div>
+  <div>마우스 위치: {{ x }}, {{ y }}</div>
 </template>
 
 <style></style>
