@@ -1,14 +1,7 @@
 <script setup>
-import { watch } from 'vue';
+// import { watch } from 'vue';
 import { useMouse } from '../../composables/mouse';
 const { x, y } = useMouse();
-
-watch(
-  () => x.value,
-  () => {
-    console.log(x.value);
-  }
-);
 </script>
 
 <template>

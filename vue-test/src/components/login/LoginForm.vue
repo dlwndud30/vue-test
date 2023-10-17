@@ -1,30 +1,17 @@
 <script setup>
-import { ref, watch, onMounted } from 'vue';
+import { ref } from 'vue';
+import CustomInput from './CustomInput.vue';
+import CustomInputV2 from './CustomInputV2.vue';
 
-import { useFetch } from '../../composables/fetch.js';
-const url = ref('/api/login');
-const { data, error } = useFetch(url);
-
-const user = ref({ email: '', password: '' });
-watch(user.value, () => {
-  console.log(user.value);
-});
-
-import axios from 'axios';
-const load = async () => {
-  const result = await axios.get('/api/login');
-  user.value = result.data;
-};
-
-onMounted(() => {
-  load();
+const props = defineProps({
+  userData: { type: Object },
 });
 
 const vFocus = {
   //el : 디렉티브가 바인딩된 엘리먼트
   mounted(el, binding) {
-    console.log(el);
-    console.log(binding);
+    // console.log(el);
+    // console.log(binding);
     el.focus();
   },
 };
@@ -32,8 +19,8 @@ const vFocus = {
 const vExample = {
   //el : 디렉티브가 바인딩된 엘리먼트
   mounted(el, binding) {
-    console.log(el);
-    console.log(binding);
+    // console.log(el);
+    // console.log(binding);
   },
 };
 
@@ -56,6 +43,12 @@ const vColor = (el, binding) => {
 
 const directiveArg = ref('someArg');
 const directiveValue = ref('someValue');
+
+//---------------------------
+const name = ref('name');
+const searchText = ref('searchText');
+const first = ref('first');
+const last = ref('last');
 </script>
 <template>
   <div class="d-flex flex-row pb-2">
@@ -73,7 +66,8 @@ const directiveValue = ref('someValue');
         v-focus
         id="email"
         type="text"
-        v-model="user.email"
+        :value="userData.email"
+        @input="searchText = $event.target.value"
       />
     </div>
     <div v-example:[directiveArg]="directiveValue">
@@ -81,11 +75,25 @@ const directiveValue = ref('someValue');
       <input
         id="password"
         type="password"
-        v-model="user.password"
+        :value="userData.password"
+        @input="searchText = $event.target.value"
       />
     </div>
+    <div>
+      <label for="name">Name</label>
+      <input
+        id="name"
+        :value="name"
+        @input="name = $event.target.value"
+      />
+    </div>
+    <div class="py-2">------------v-Model--------------</div>
+    <CustomInput v-model.capitalize="searchText" />
+    <CustomInput v-model="searchText" />
+    <input v-model="searchText" />
+    <CustomInputV2
+      v-model:firstName="first"
+      v-model:lastName="last"
+    ></CustomInputV2>
   </form>
-
-  <div>{{ data }}</div>
-  <div>{{ error }}</div>
 </template>
