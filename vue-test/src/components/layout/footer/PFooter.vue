@@ -1,13 +1,19 @@
 <script setup></script>
 
 <template>
-  <footer :class="$style.footer">끝...</footer>
+  <footer
+    id="Footer"
+    :class="$style.footer"
+  >
+    끝...
+  </footer>
 </template>
 
 <style lang="scss" module>
 .footer {
   width: 100%;
-  height: 40px;
+  margin: 40px 0 0 !important;
+  border-top: 2px solid #aaa;
   background-color: #eeeeee;
   text-align: center;
 }

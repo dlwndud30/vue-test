@@ -15,6 +15,7 @@ export default defineConfig({
     outDir: '../../spring-test/test/src/main/resources/static',
   },
   server: {
+    port: 9999,
     proxy: {
       '/api': {
         target: 'http://localhost:8080',

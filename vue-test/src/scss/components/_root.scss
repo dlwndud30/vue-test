@@ -7,6 +7,12 @@ html,
 body {
   margin: 0 auto;
   height: 100%;
+  word-spacing: -1px;
+  color: #666;
+  font-size: 14px;
+  line-height: 20px;
+  font-family: Montserrat,-apple-system,NotoSansCJKkr,AppleSDGothicNeo,Roboto,dotum,"돋움",sans-serif;
+  letter-spacing: -.04em;
 }
 
 body {
@@ -26,4 +32,42 @@ body {
   font-weight: normal;
 
   background-color: #fffbfb;
+}
+
+#Container, #Footer, #Header, #Wrapper {
+  width: 100%;
+  min-width: 1020px;
+}
+
+a {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+*{
+  box-sizing: border-box;
+}
+
+.list{
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.list li{
+  padding: 0 9px 0 10px;
+  border-right: 1px solid lightgrey;
+  text-decoration: none;
+  color: #666;
+}
+.list li a.router-link-exact-active {
+  text-decoration: none; 
+  color: #666; 
+  font-weight: bold; 
+}
+
+.list li:last-child{
+  border: none
 }

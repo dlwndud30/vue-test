@@ -1,11 +1,13 @@
 <script setup>
 import PHeader from './header/PHeader.vue';
+import PGnb from './header/PGnb.vue';
 import PMain from './main/PMain.vue';
 import PFooter from '../layout/footer/PFooter.vue';
 </script>
 <template>
   <div :class="$style.app">
     <PHeader />
+    <PGnb />
     <PMain />
     <PFooter />
   </div>
@@ -15,6 +17,6 @@ import PFooter from '../layout/footer/PFooter.vue';
 .app {
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  min-height: 100vh;
 }
 </style>
