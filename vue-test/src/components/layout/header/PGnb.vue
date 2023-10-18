@@ -44,6 +44,7 @@
   }
 
   .gnb_menu_list {
+    width: 100%;
     font-size: large;
     justify-content: space-around;
     align-items: center;
