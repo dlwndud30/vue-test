@@ -1,6 +1,6 @@
 // import './assets/main.css';
 import './scss/styles.scss';
-// import 'bootstrap/dist/css/bootstrap.css';
+
 import 'bootstrap/scss/bootstrap.scss';
 import 'bootstrap/dist/js/bootstrap.js';
 import { BootstrapVueNext } from 'bootstrap-vue-next';

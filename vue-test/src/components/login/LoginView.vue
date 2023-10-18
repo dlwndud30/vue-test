@@ -10,9 +10,12 @@ const url = ref('/api/login');
 const { data, error } = useFetch(url);
 
 const user = ref({ email: '', password: '' });
-watch(user.value, () => {
-  console.log(user.value);
-});
+watch(
+  () => user.value,
+  () => {
+    console.log(user.value);
+  }
+);
 
 const load = async () => {
   const result = await api.get('/api/login');
