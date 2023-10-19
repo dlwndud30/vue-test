@@ -19,6 +19,46 @@ const router = createRouter({
       name: 'login',
       component: Components.LoginView,
     },
+    {
+      path: '/hotdeal',
+      name: 'hotdeal',
+      component: Components.HotdealView,
+    },
+    {
+      path: '/best',
+      name: 'best',
+      component: Components.BestView,
+    },
+    {
+      path: '/planShopDetail',
+      name: 'planShopDetail',
+      component: Components.PlanShopDetailView,
+    },
+    {
+      path: '/planShop',
+      name: 'planShop',
+      component: Components.PlanShopView,
+    },
+    {
+      path: '/sale',
+      name: 'sale',
+      component: Components.SaleView,
+    },
+    {
+      path: '/giftCardGuide',
+      name: 'giftCardGuide',
+      component: Components.GiftCardView,
+    },
+    {
+      path: '/memberShip',
+      name: 'memberShip',
+      component: Components.MemberShipView,
+    },
+    {
+      path: '/event',
+      name: 'event',
+      component: Components.EventView,
+    },
   ],
 });
 

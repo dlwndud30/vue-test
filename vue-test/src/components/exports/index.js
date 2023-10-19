@@ -1,3 +1,11 @@
 export { default as HomeView } from '../home/HomeView.vue';
 export { default as AboutView } from '../about/AboutView.vue';
 export { default as LoginView } from '../login/LoginView.vue';
+export { default as HotdealView } from '../hotdeal/HotdealView.vue';
+export { default as BestView } from '../best/BestView.vue';
+export { default as PlanShopDetailView } from '../planShop/PlanShopDetailView.vue';
+export { default as PlanShopView } from '../planShop/PlanShopView.vue';
+export { default as SaleView } from '../sale/SaleView.vue';
+export { default as GiftCardView } from '../giftCard/GiftCardView.vue';
+export { default as MemberShipView } from '../memberShip/MemberShipView.vue';
+export { default as EventView } from '../event/EventView.vue';
