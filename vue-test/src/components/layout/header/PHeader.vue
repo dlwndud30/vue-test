@@ -1,9 +1,18 @@
 <script setup>
+import { ref } from 'vue';
 import { RouterLink } from 'vue-router';
+
+const isDeliveryBoxVisible = ref(false);
+const showDeliveryBox = () => {
+  isDeliveryBoxVisible.value = true;
+};
+const hideDeliveryBox = () => {
+  isDeliveryBoxVisible.value = false;
+};
 </script>
 <template>
   <header class="header">
-    <ul class="header_top">
+    <ul class="header_top list">
       <li><RouterLink to="/login">회원가입</RouterLink></li>
       <li><RouterLink to="/">로그인</RouterLink></li>
       <li><RouterLink to="/about">장바구니</RouterLink></li>
@@ -24,10 +33,30 @@ import { RouterLink } from 'vue-router';
         />
         <button class="search_btn"></button>
       </div>
-      <ul class="mymenu_area">
-        <li>오늘드림</li>
-        <li>관심매장소식</li>
-        <li>최근본상품</li>
+      <ul class="mymenu_area list">
+        <li class="delivery">
+          <div
+            @mouseover="showDeliveryBox"
+            @mouseout="hideDeliveryBox"
+            :class="{ hover: isDeliveryBoxVisible }"
+          >
+            오늘드림
+            <img
+              class="today-icon"
+              src="https://static.oliveyoung.co.kr/pc-static-root/image/comm/ico_delivery_flag.png"
+            />
+          </div>
+          <div
+            class="delivery-box-wrap"
+            v-if="isDeliveryBoxVisible"
+          >
+            <div class="delivery-box">
+              <p>배송지를 등록하고 오늘드림으로 구매 가능한 상품을 확인하세요!</p>
+            </div>
+          </div>
+        </li>
+        <li class="store">관심 매장소식</li>
+        <li class="recent">최근 본 상품</li>
       </ul>
     </div>
   </header>
@@ -50,22 +79,10 @@ import { RouterLink } from 'vue-router';
   list-style: none;
   letter-spacing: -0.005em;
 }
-.header_top li a {
-  padding: 0 9px 0 10px;
-  border-right: 1px solid lightgrey;
-  text-decoration: none;
-  color: #666;
-  font-size: 12px;
-}
 
-.header_top li a.router-link-exact-active {
-  text-decoration: none; /* 밑줄 제거 */
-  color: #666; /* 링크 색상 설정 */
-  font-weight: bold; /* 글꼴 굵기 설정 */
-}
-
-.header_top li:last-child a {
-  border: none;
+.header_top li {
+  display: inline;
+  font-size: 11px;
 }
 
 .header_inner {
@@ -105,21 +122,56 @@ import { RouterLink } from 'vue-router';
     }
   }
 
-  .mymenu_area {
-    display: flex;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-
   .mymenu_area li {
-    padding: 0 9px 0 10px;
+    padding: 0 14px 0 15px;
     border-right: 1px solid lightgray;
-    font-size: 16px;
+    font-size: 14px;
+    color: #000;
+    line-height: 20px;
+    z-index: 30;
+    font-weight: 200;
   }
 
+  .mymenu_area > li:not(:first-child):after {
+    content: '';
+    display: inline-block;
+    width: 7px;
+    height: 4px;
+    background: url(https://static.oliveyoung.co.kr/pc-static-root/image/comm/ico_arrow11x72.png) no-repeat;
+    margin: 0 0 2px 8px;
+  }
   .mymenu_area li:last-child {
+    padding-right: 0;
     border-right: none;
   }
+}
+
+.today-icon {
+  font-size: 12px;
+  width: 22px;
+}
+
+.delivery-box-wrap {
+  z-index: 20;
+  position: absolute;
+  top: 100px;
+  width: 210px;
+  background: #fff;
+  padding: 12px 15px;
+  box-shadow: 2px 0 7px 2px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  .delivery-box > p {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 16px;
+    color: #000;
+    letter-spacing: 0;
+    word-break: keep-all;
+    margin: 0;
+  }
+}
+
+.hover {
+  border-bottom: 2px solid #000;
 }
 </style>

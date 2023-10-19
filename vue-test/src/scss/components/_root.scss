@@ -54,20 +54,30 @@ a {
   display: flex;
   margin: 0;
   padding: 0;
+  align-items: center;
+  font-family: "NotoSansCJKkr";
 }
 
 .list li{
-  padding: 0 9px 0 10px;
-  border-right: 1px solid lightgrey;
+  display: block;
   text-decoration: none;
   color: #666;
 }
-.list li a.router-link-exact-active {
+
+.list a{
+  border-right: 1px solid lightgrey;
+  padding: 0 9px 0 10px;
+  text-decoration: none;
+  color: #666;
+}
+
+.list a.router-link-exact-active {
   text-decoration: none; 
   color: #666; 
   font-weight: bold; 
 }
 
-.list li:last-child{
-  border: none
+.list li:last-child a {
+  padding-right: 0;
+  border: none;
 }
