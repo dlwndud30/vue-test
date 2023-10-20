@@ -1,8 +1,14 @@
-<script setup></script>
+<script setup>
+import { ref } from 'vue';
+import { HomeView } from '../../exports';
+</script>
 <template>
   <div class="gnb">
     <div class="gnb-wrap">
       <a class="menu">카테고리</a>
+      <div class="all-menu-wrap">
+        <p>카테고리ㅣㅣㅣㅣ</p>
+      </div>
       <!-- <div class="layer_all_menu d-none">ss</div> -->
       <ul class="gnb-menu-list list">
         <li><RouterLink to="/hotdeal">오특</RouterLink></li>
